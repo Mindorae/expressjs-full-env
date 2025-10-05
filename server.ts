@@ -3,6 +3,7 @@ import morgan from "morgan";
 import env from "./src/config/constants.conf";
 import { sendSuccess } from "./src/utils/errors/message";
 import { globalError, routerError } from "./src/utils/errors";
+import logger from "./src/config/logger.conf";
 
 const app: Express = e();
 
@@ -10,7 +11,7 @@ app.use(e.json());
 app.use(e.urlencoded());
 app.use(morgan('dev'));
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/api/health', (req: Request, res: Response) => {
     return sendSuccess(
         res,
         'Server running successfully!',
@@ -23,5 +24,5 @@ app.use(globalError);
 app.use(routerError);
 
 app.listen(env.PORT, env.HOST, () => {
-    console.log(`Server running on http://${env.HOST}:${env.PORT}`);
+    logger.debug(`Server running on http://${env.HOST}:${env.PORT}`)
 });

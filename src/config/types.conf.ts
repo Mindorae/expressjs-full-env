@@ -17,8 +17,15 @@ interface IGlobalError {
 
 type AsyncHandler = (req: Request, res: Response, next: NextFunction) => Promise<any>;
 
+interface IUser {
+    id: string;
+    role?: string;
+    jti: string;
+}
+
 export {
     EnvConfig,
     IGlobalError,
-    AsyncHandler
+    AsyncHandler,
+    IUser,
 }
