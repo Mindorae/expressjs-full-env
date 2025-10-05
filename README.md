@@ -1,2 +1,1 @@
-# auth-service
-Authentication system
+# Prepration of express api server
