@@ -1,0 +1,36 @@
+{
+  "name": "auth-service",
+  "version": "1.0.0",
+  "description": "Auth microservice architecture like big companies have: secure, extensible, auditable, and privacy-aware.",
+  "main": "server.ts",
+  "scripts": {
+    "test": "node test/index.ts",
+    "start": "npx tsx --env-file=.env --watch server.ts"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mindorae/auth-service.git"
+  },
+  "keywords": [
+    "Mindorae",
+    "microservice",
+    "auth"
+  ],
+  "author": "Mohmed Mostafa (0xSASA)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Mindorae/auth-service/issues"
+  },
+  "homepage": "https://github.com/Mindorae/auth-service#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^24.6.2"
+  }
+}
