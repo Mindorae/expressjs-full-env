@@ -1,0 +1,6 @@
+{
+    "SUCCESS": "Server runnign successfully!",
+    "USER_NOT_FOUND": "User with id {{id}} not found.",
+    "ROUTE_NOT_FOUND": "Route not found: {{route}}",
+    "INTERNAL_ERROR": "Network error, try again later."
+}

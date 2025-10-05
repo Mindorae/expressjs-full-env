@@ -4,17 +4,20 @@ import env from "./src/config/constants.conf";
 import { sendSuccess } from "./src/utils/errors/message";
 import { globalError, routerError } from "./src/utils/errors";
 import logger from "./src/config/logger.conf";
+import i18nExpressMiddleware from './src/middlewares/i18n.middleware';
 
 const app: Express = e();
 
 app.use(e.json());
 app.use(e.urlencoded());
 app.use(morgan('dev'));
+app.use(i18nExpressMiddleware);
 
 app.get('/api/health', (req: Request, res: Response) => {
     return sendSuccess(
+        req,
         res,
-        'Server running successfully!',
+        'SUCCESS',
         undefined,
         env.HTTP_STATUS.OK
     )

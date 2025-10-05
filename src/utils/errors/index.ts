@@ -19,10 +19,9 @@ const asyncError = (asyncFn: AsyncHandler) =>
             next(err);
         });
 
-
 const globalError = (error: IGlobalError, req: Request, res: Response, next: NextFunction) => {
     const statusCode: HttpStatusCode = error.statusCode ?? HTTP_STATUS.BAD_REQUEST;
-    const message: string = error.message ?? 'Network error, try again later.';
+    const message: string = error.message ?? "Network error, try again later.";
     const data: string[] | undefined = error.data ?? undefined;
 
     logger.error("UnhandledError", {
@@ -36,32 +35,29 @@ const globalError = (error: IGlobalError, req: Request, res: Response, next: Nex
     });
 
     if (isDev) {
-        console.error('GlobalError:', { error, url: req.originalUrl });
+        console.error("GlobalError:", { error, url: req.originalUrl });
     }
-    return sendError(res, message, 'NETWORK_ERR', statusCode, data);
+
+    return sendError(req, res, message, "NETWORK_ERR", statusCode, data);
 };
 
 const routerError = (req: Request, res: Response, next: NextFunction) => {
+    const route = `${req.method} ${req.originalUrl}`;
     const message = isDev ? `Route Not Found: ${req.method} ${req.originalUrl}` : "Resource not found";
-    const details = [`${req.method} ${req.originalUrl}`];
+    const details = [route];
 
     logger.warn("RouteNotFound", {
         message,
-        route: `${req.method} ${req.originalUrl}`,
+        route,
         ip: req.ip,
         referer: req.get("referer"),
     });
 
-    return sendError(
-        res,
-        message,
-        "NOT_FOUND",
-        HTTP_STATUS.NOT_FOUND,
-        details
-    );
-}
+    return sendError(req, res, 'ROUTE_NOT_FOUND', "NOT_FOUND", HTTP_STATUS.NOT_FOUND, details, { route });
+};
+
 export {
     asyncError,
     globalError,
     routerError
-}
+};
