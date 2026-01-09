@@ -1,10 +1,11 @@
-import e, { Express, Request, Response } from "express";
+import type { Express, Request, Response } from "express";
+import e from 'express';
 import morgan from "morgan";
-import env from "./src/config/constants.conf";
-import { sendSuccess } from "./src/utils/errors/message";
-import { globalError, routerError } from "./src/utils/errors";
-import logger from "./src/config/logger.conf";
-import i18nExpressMiddleware from './src/middlewares/i18n.middleware';
+import { sendSuccess } from "./utils/errors/message.js";
+import { globalError, routerError } from "./utils/errors/index.js";
+import logger from "./config/logger.conf.js";
+import i18nExpressMiddleware from './middlewares/i18n.middleware.js';
+import env from "./config/constants.conf.js";
 
 const app: Express = e();
 
@@ -28,4 +29,5 @@ app.use(routerError);
 
 app.listen(env.PORT, env.HOST, () => {
     logger.debug(`Server running on http://${env.HOST}:${env.PORT}`)
+    console.log(`Server running on http://${env.HOST}:${env.PORT}`)
 });

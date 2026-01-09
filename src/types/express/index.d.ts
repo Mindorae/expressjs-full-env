@@ -1,5 +1,5 @@
-import { IUser } from '../../config/types.conf';
-import { TFunction } from 'i18next';
+import type { IUser } from '../../config/types.conf.js';
+import type { TFunction } from 'i18next';
 
 declare global {
     namespace Express {
@@ -10,3 +10,5 @@ declare global {
         }
     }
 }
+
+export { };

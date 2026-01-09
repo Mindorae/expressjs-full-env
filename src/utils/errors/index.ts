@@ -1,8 +1,8 @@
-import { NextFunction, Request, Response } from "express";
-import env, { HttpStatusCode } from "../../config/constants.conf";
-import { sendError } from "./message";
-import { AsyncHandler, IGlobalError } from "../../config/types.conf";
-import logger from "../../config/logger.conf";
+import type { NextFunction, Request, Response } from "express";
+import env, { type HttpStatusCode } from "../../config/constants.conf.js";
+import { sendError } from "./message.js";
+import type { AsyncHandler, IGlobalError } from "../../config/types.conf.js";
+import logger from "../../config/logger.conf.js";
 
 const { isDev, HTTP_STATUS } = env;
 

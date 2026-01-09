@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { EnvConfig } from './types.conf';
+import type { EnvConfig } from './types.conf.js';
 
 const HOST = process.env.HOST ?? '0.0.0.0';
 const PORT = Number(process.env.PORT ?? 3829);

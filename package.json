@@ -1,31 +1,42 @@
 {
-  "name": "auth-service",
+  "name": "init-express",
   "version": "1.0.0",
-  "description": "Auth microservice architecture like big companies have: secure, extensible, auditable, and privacy-aware.",
+  "description": "Express framework environment with full preparation",
   "main": "server.ts",
   "scripts": {
-    "test": "node test/index.ts",
-    "start": "npx tsx --env-file=.env --watch server.ts"
+    "build": "tsc",
+    "start": "node dist/src/server.js",
+    "dev": "tsx watch src/server.ts",
+    "test": "node dist/test/index.js"
   },
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mindorae/auth-service.git"
+    "url": "git+https://github.com/Mindorae/init-express.git"
   },
   "keywords": [
     "Mindorae",
     "microservice",
-    "auth"
+    "auth",
+    "environment",
+    "express.js",
+    "expressjs",
+    "express"
   ],
   "author": "Mohmed Mostafa (0xSASA)",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/Mindorae/auth-service/issues"
+    "url": "https://github.com/Mindorae/init-express/issues"
   },
-  "homepage": "https://github.com/Mindorae/auth-service#readme",
+  "homepage": "https://github.com/Mindorae/init-express#readme",
+  "resolutions": {
+    "path-to-regexp": "^6.3.0"
+  },
   "dependencies": {
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
     "i18next": "^25.5.3",
     "i18next-fs-backend": "^2.6.0",
     "i18next-http-middleware": "^3.8.1",
@@ -37,6 +48,9 @@
     "@types/express": "^5.0.3",
     "@types/i18next": "^13.0.0",
     "@types/morgan": "^1.9.10",
-    "@types/node": "^24.6.2"
+    "@types/node": "^25.0.3",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   }
 }

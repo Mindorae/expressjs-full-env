@@ -1,6 +1,5 @@
-import { RequestHandler } from "express";
-import i18nConf from "../config/i18n.conf";
-import { Request, Response, NextFunction } from "express";
+import i18nConf from "../config/i18n.conf.js";
+import type { Request, Response, NextFunction, RequestHandler } from "express";
 
 const { i18next, middleware } = i18nConf;
 

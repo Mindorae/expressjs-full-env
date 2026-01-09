@@ -1,6 +1,6 @@
-import { Request, Response } from "express";
-import env from "../../config/constants.conf";
-import { HttpStatusCode } from "../../config/constants.conf";
+import type { Request, Response } from "express";
+import env from "../../config/constants.conf.js";
+import type { HttpStatusCode } from "../../config/constants.conf.js";
 
 const { isDev } = env;
 

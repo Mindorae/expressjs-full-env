@@ -2,7 +2,7 @@ import { existsSync, mkdirSync } from "fs";
 import { join } from "path";
 import { createLogger, format, transports } from "winston";
 import "winston-daily-rotate-file";
-import env from "./constants.conf";
+import env from "./constants.conf.js";
 
 const { isDev } = env;
 
