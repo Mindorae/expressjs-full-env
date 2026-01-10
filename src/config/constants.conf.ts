@@ -3,7 +3,7 @@ import type { EnvConfig } from './types.conf.js';
 
 const HOST = process.env.HOST ?? '0.0.0.0';
 const PORT = Number(process.env.PORT ?? 3829);
-const isDev = process.env.NODE_ENV === 'developement';
+const isDev = process.env.NODE_ENV === 'development';
 const DATABASE_URL = process.env.DATABASE_URL ?? '';
 
 const HTTP_STATUS = {
