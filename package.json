@@ -1,5 +1,5 @@
 {
-  "name": "init-express",
+  "name": "expressjs-full-env",
   "version": "1.0.0",
   "description": "Express framework environment with full preparation",
   "main": "server.ts",
@@ -12,7 +12,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mindorae/init-express.git"
+    "url": "git+https://github.com/Mindorae/expressjs-full-env.git"
   },
   "keywords": [
     "Mindorae",
@@ -26,9 +26,9 @@
   "author": "Mohmed Mostafa (0xSASA)",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/Mindorae/init-express/issues"
+    "url": "https://github.com/Mindorae/expressjs-full-env/issues"
   },
-  "homepage": "https://github.com/Mindorae/init-express#readme",
+  "homepage": "https://github.com/Mindorae/expressjs-full-env#readme",
   "resolutions": {
     "path-to-regexp": "^6.3.0"
   },
