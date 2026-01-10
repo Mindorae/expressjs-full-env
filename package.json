@@ -1,7 +1,7 @@
 {
-  "name": "expressjs-full-env",
+  "name": "@mindorae/expressjs-full-env",
   "version": "1.0.0",
-  "description": "Express framework environment with full preparation",
+  "description": "Batteries-included Express.js + TypeScript (ESM) starter with i18n, structured logging, and centralized error handling",
   "main": "server.ts",
   "scripts": {
     "build": "tsc",
@@ -15,13 +15,17 @@
     "url": "git+https://github.com/Mindorae/expressjs-full-env.git"
   },
   "keywords": [
+    "starter",
+    "boilerplate",
+    "template",
     "Mindorae",
-    "microservice",
-    "auth",
-    "environment",
-    "express.js",
-    "expressjs",
-    "express"
+    "express",
+    "express",
+    "typescript",
+    "esm",
+    "i18n",
+    "winston",
+    "nodejs"
   ],
   "author": "Mohmed Mostafa (0xSASA)",
   "license": "Apache-2.0",
