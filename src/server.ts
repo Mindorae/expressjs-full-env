@@ -10,7 +10,7 @@ import env from "./config/constants.conf.js";
 const app: Express = e();
 
 app.use(e.json());
-app.use(e.urlencoded());
+app.use(e.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(i18nExpressMiddleware);
 
@@ -24,8 +24,8 @@ app.get('/api/health', (req: Request, res: Response) => {
     )
 });
 
-app.use(globalError);
 app.use(routerError);
+app.use(globalError);
 
 app.listen(env.PORT, env.HOST, () => {
     logger.debug(`Server running on http://${env.HOST}:${env.PORT}`)
