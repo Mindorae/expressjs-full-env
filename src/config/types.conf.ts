@@ -10,7 +10,7 @@ export interface EnvConfig {
 };
 
 export interface IGlobalError {
-    statusCode: HttpStatusCode;
+    statusCode?: HttpStatusCode;
     message: string;
     data: string[];
 }
